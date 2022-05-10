@@ -7,18 +7,10 @@ export function Home() {
   return (
     <Wrapper>
       <div className='cards'>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card label='Entrada' value='17.000' />
+        <Card label='Saída' value='17.000' output />
+        <Card label='Total' value='17.000' isTotal />
       </div>
-      <header>
-        {/* <h1>ola</h1> */}
-        {/* <div className='logo'>
-          <img src='dev.finances.svg' alt='Logo da página' />
-          <img src='$.svg' alt=]
-          'Um $ que complementa o logo' />
-        </div> */}
-      </header>
     </Wrapper>
   );
 }

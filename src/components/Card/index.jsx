@@ -4,12 +4,26 @@ import entrada from '../../images/entradas.svg';
 import saida from '../../images/saidas.svg';
 import dolar from '../../images/total.svg';
 
-const Card = () => {
+const Card = ({ label, value, isTotal, output }) => {
+  const handleImg = () => {
+    if (isTotal) {
+      return dolar;
+    }
+    if (output) {
+      return saida;
+    } else {
+      return entrada;
+    }
+  };
+
   return (
-    <div className='card'>
-      <p>Entradas</p>
-      <img src={entrada} alt='' />
-      <span>R$17.400,00</span>
+    <div
+      className='card'
+      style={isTotal ? { background: '#49AA26', color: '#FFFFFF' } : {}}
+    >
+      <p>{label}</p>
+      <img src={handleImg()} alt='' />
+      <span>R${value}</span>
     </div>
   );
 };

@@ -1,0 +1,26 @@
+.table {
+  margin: 100px 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-header th:nth-child(1),
+.table-line td:nth-child(1) {
+  padding: 0 32px;
+}
+
+.table-line td:nth-child(3),
+.table-line td:nth-child(4) {
+  color: #969cb3;
+}
+
+.table-header {
+  color: #969cb3;
+  text-align: left;
+}
+
+.table-line {
+  background: #ffffff;
+  height: 64px;
+  border-radius: 5px;
+}

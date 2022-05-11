@@ -19,7 +19,7 @@ const Card = ({ label, value, isTotal, output }) => {
   return (
     <div
       className='card'
-      style={isTotal ? { background: '#49AA26', color: '#FFFFFF' } : {}}
+      style={isTotal ? { background: '#33CC95', color: '#FFFFFF' } : {}}
     >
       <p>{label}</p>
       <img src={handleImg()} alt='' />

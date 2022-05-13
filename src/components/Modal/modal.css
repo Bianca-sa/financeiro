@@ -1,3 +1,46 @@
+.background-modal {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  inset: 0 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal {
-  border-radius: solid 2px red;
+  background: #f0f2f5;
+  width: 576px;
+  height: 588px;
+  padding: 64px 48px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.modal h2 {
+  font-size: 24 px;
+  color: #363f5f;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+.modal input {
+  background: #e7e9ee;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  width: 480px;
+  height: 64px;
+  font-size: 16px;
+  color: #969cb3;
+  padding: 1rem;
+  margin: 10px 0;
+}
+
+.bt-conteiner {
+  display: flex;
+}
+
+span {
+  padding: 9px;
 }

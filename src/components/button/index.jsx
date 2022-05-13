@@ -1,11 +1,10 @@
 import React from 'react';
-
 import './button.css';
 
 const Button = () => {
   return (
-    <div className='button'>
-      <buton>Nova transação</buton>
+    <div className='newTrasition'>
+      <buton>Nova transação</buton>;
     </div>
   );
 };

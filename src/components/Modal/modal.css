@@ -13,24 +13,21 @@
   height: 588px;
   padding: 64px 48px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   text-align: left;
+  position: relative;
 }
-
-/* .modal img {
-  background: #f0f2f5;
-  height: 14px;
-  width: 14px;
-  display: flex;
-  text-align: right;
-} */
 
 .modal h2 {
   font-size: 24 px;
   color: #363f5f;
   font-weight: 400;
-  padding: 1rem 0;
+  padding-bottom: 32px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .modal input {
@@ -41,14 +38,28 @@
   height: 64px;
   font-size: 16px;
   color: #969cb3;
-  padding: 1rem;
-  margin: 10px 0;
+  padding: 0 1rem;
+}
+
+.modal input::-webkit-outer-spin-button,
+.modal input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .bt-conteiner {
   display: flex;
+  justify-content: space-between;
 }
 
-span {
-  padding: 9px;
+.vector {
+  background: #f0f2f5;
+  height: 14px;
+  width: 14px;
+  display: flex;
+  text-align: right;
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  cursor: pointer;
 }

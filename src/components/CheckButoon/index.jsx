@@ -3,30 +3,23 @@ import './check-button.css';
 import entrada from '../../images/entradas.svg';
 import saida from '../../images/saidas.svg';
 
-const CheckButton = ({ text, positive, onClick, seleceted }) => {
-  const color = ({ clickEntrada, clickSaida }) => {
-    if (clickEntrada) {
-      return '#12A454';
-    }
-    if (clickSaida) {
-      return '#E62E4D';
-    } else {
-      return '';
-    }
-  };
-
+const CheckButton = ({ text, positive, onClick, selected }) => {
   return (
     <button
       className='check'
       type='button'
       onClick={onClick}
-      // style={
-      //   clickEntrada
-      //     ? { background: '#12A454', color: '#FFFFFF' }
-      //     : clickSaida
-      //     ? { background: '#E62E4D', color: '#FFFFFF' }
-      //     : {}
-      // }
+      style={
+        selected
+          ? {
+              background: `${
+                positive
+                  ? 'hsla(147, 80%, 36%, 0.1)'
+                  : 'hsla(350, 78%, 54%, 0.1)'
+              }`,
+            }
+          : {}
+      }
     >
       <img src={positive ? entrada : saida} alt='' />
       <span>{text}</span>

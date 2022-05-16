@@ -1,28 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './modal.css';
 import ButtonRegister from '../ButtonRegister';
 import CheckButton from '../CheckButoon';
 import vector from '../../images/vector.svg';
 
 const Modal = () => {
+  const [entradaSelected, setEntradaSeleted] = useState(false);
+  const [saidaSelected, setSaidaSelected] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.peventDefault();
+  };
+
   return (
     <div className='background-modal'>
       <div className='modal'>
-        {/* <img src={vector} alt='Botão de fechar para sair do modal' /> */}
+        <img
+          className='vector'
+          src={vector}
+          alt='Botão de fechar para sair do modal'
+        />
         <h2>Cadastrar transação</h2>
-        <input type='text' placeholder='Nome' />
-        <input type='number' placeholder='R$' />
-        <div className='bt-conteiner'>
-          <CheckButton
-            text='Entrada'
-            positive
-            onClick={() => console.log('Entrada')}
-          />
-          <span></span>
-          <CheckButton text='Saída' onClick={() => console.log('Saída')} />
-        </div>
-        <input type='text' placeholder='Categoria' />
-        <ButtonRegister />
+        <form onSubmit={handleSubmit}>
+          <input type='text' placeholder='Nome' />
+          <input type='number' placeholder='Preço' />
+          <div className='bt-conteiner'>
+            <CheckButton
+              text='Entrada'
+              positive
+              onClick={() => {
+                setSaidaSelected(false);
+                setEntradaSeleted(!entradaSelected);
+              }}
+              selected={entradaSelected}
+            />
+            <CheckButton
+              text='Saída'
+              onClick={() => {
+                setEntradaSeleted(false);
+                setSaidaSelected(!saidaSelected);
+              }}
+              selected={saidaSelected}
+            />
+          </div>
+          <input type='text' placeholder='Categoria' />
+          <ButtonRegister />
+        </form>
       </div>
     </div>
   );

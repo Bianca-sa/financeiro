@@ -11,6 +11,10 @@
   justify-content: center;
 }
 
+.check:hover {
+  cursor: pointer;
+}
+
 .check img {
   padding-right: 15px;
 }

@@ -18,6 +18,14 @@
   text-align: left;
 }
 
+/* .modal img {
+  background: #f0f2f5;
+  height: 14px;
+  width: 14px;
+  display: flex;
+  text-align: right;
+} */
+
 .modal h2 {
   font-size: 24 px;
   color: #363f5f;

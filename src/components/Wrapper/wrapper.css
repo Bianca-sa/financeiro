@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  padding: 0 160px;
+  padding: 0 10%;
 }
 
 .content {
@@ -15,4 +15,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 80px;
+}
+
+@media (max-width: 768px) {
+  .background {
+    background: linear-gradient(#5429cc 28%, #f0f2f5 0%);
+    padding: 43px 15px 0;
+  }
+  .content {
+    height: 100%;
+    margin-top: 41px;
+    gap: 32px;
+  }
 }

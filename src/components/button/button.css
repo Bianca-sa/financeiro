@@ -3,4 +3,14 @@
   color: #ffff;
   padding: 12px 32px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .newTrasition {
+    width: 130px;
+    height: 40px;
+    font-size: 12px;
+    padding: 11px 16px;
+  }
 }

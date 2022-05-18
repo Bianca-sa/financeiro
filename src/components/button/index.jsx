@@ -1,12 +1,10 @@
 import React from 'react';
 import './button.css';
 
-const Button = () => {
-  return (
-    <div className='newTrasition'>
-      <buton>Nova transação</buton>;
-    </div>
-  );
-};
+const Button = ({ onClick }) => (
+  <buton className='newTrasition' onClick={onClick}>
+    Nova transação
+  </buton>
+);
 
 export default Button;

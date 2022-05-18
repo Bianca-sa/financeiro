@@ -18,7 +18,7 @@
 }
 
 .modal h2 {
-  font-size: 24 px;
+  font-size: 24px;
   color: #363f5f;
   font-weight: 400;
   padding-bottom: 32px;
@@ -62,4 +62,44 @@
   top: 21px;
   right: 21px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 375px;
+    height: 446px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 300s;
+  }
+  .modal form {
+    display: flex;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .modal h2 {
+    position: absolute;
+    top: 21px;
+    left: 27px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .vector {
+    top: 27px;
+    right: 27px;
+    color: #363f5f;
+  }
+  .modal input {
+    width: 327px;
+    height: 56px;
+  }
+
+  .background-modal {
+    display: flex;
+    align-items: end;
+  }
 }

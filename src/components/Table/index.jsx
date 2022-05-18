@@ -1,21 +1,40 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './table.css';
+import Context from '../../context';
 
 const Line = () => {
+  const { dataArray } = useContext(Context);
+  const widths = window.screen.width;
+
   return (
     <table className='table'>
       <tr className='table-header'>
-        <th>Título</th>
-        <th>Preço</th>
-        <th>Categoria</th>
-        <th>Data</th>
+        {widths <= 768 ? (
+          <div className='table-title'>
+            <h3>Listagem</h3>
+            <span>4 itens</span>
+          </div>
+        ) : (
+          <>
+            <th>Título</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </>
+        )}
       </tr>
-      <tr className='table-line'>
-        <td>Desenvolvimento de site</td>
-        <td>R$170,00</td>
-        <td>Venda</td>
-        <td>12/05/2001</td>
-      </tr>
+      {dataArray.map((obj) => {
+        return (
+          <tr className='table-line'>
+            <td>{obj.name}</td>
+            <td>R${obj.price}</td>
+            <div className='separator'>
+              <td>{obj.category}</td>
+              <td>Hoje</td>
+            </div>
+          </tr>
+        );
+      })}
     </table>
   );
 };

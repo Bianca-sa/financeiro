@@ -7,3 +7,10 @@
 
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .header img {
+    width: 135px;
+    height: 31.21px;
+  }
+}

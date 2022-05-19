@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import './modal.css';
 import ButtonRegister from '../ButtonRegister';
 import CheckButton from '../CheckButoon';
 import vector from '../../images/vector.svg';
 import Context from '../../context';
-import vector2 from '../../images/vector2.svg';
+import { getCurrentDate, formatNumber } from '../../utils';
+import './modal.css';
 
 const Modal = ({ openModal }) => {
   const {
@@ -25,12 +25,16 @@ const Modal = ({ openModal }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const currentDate = getCurrentDate();
     const newArray = [
       ...dataArray,
       {
         name,
         price,
         category,
+        inputSelected,
+        outputSelected,
+        currentDate,
       },
     ];
     setDataArray(newArray);
@@ -55,9 +59,10 @@ const Modal = ({ openModal }) => {
             required
           />
           <input
-            type='number'
+            type='money'
             placeholder='Preço'
-            onChange={(event) => setPrice(event.target.value)}
+            onChange={(event) => setPrice(event.target.value.replace(',', '.'))}
+            value={price}
             required
           />
           <div className='bt-conteiner'>

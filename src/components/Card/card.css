@@ -24,7 +24,7 @@
 @media (max-width: 768px) {
   .card {
     min-width: 290px;
-    height: 200px;
+    height: 100%;
   }
   .card p {
     font-size: 14px;

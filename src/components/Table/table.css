@@ -1,69 +1,83 @@
-.table {
+.table-content {
   width: 100%;
-  border-collapse: collapse;
+  display: grid;
+  grid-template-rows: 20px 1fr;
+  gap: 20px;
 }
 
-.table-header th:nth-child(1),
-.table-line td:nth-child(1) {
-  padding: 0 32px;
+.table-content .table-header .table-header-row {
+  color: #969cb3;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+}
+
+.table-content .table-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.table-content .table-rows .table-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(1, 1fr) 2fr;
+  background: #ffffff;
+  height: 64px;
+  width: 100%;
+  border-radius: 5px;
+  align-items: center;
+}
+
+.table-row span:nth-child(1),
+.table-header span:nth-child(1) {
+  padding: 0 30px;
 }
 
 .separator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   color: #969cb3;
-}
-
-.table-header {
-  color: #969cb3;
-  text-align: left;
-}
-
-.table-line {
-  background: #ffffff;
-  height: 64px;
-  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-  .table {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    gap: 8px;
-    width: 100%;
-  }
   .table-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
-  .table-line {
-    width: 100%;
-    height: 128px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    padding: 17px 24px;
-  }
-  .table-line td:nth-child(1) {
-    padding: 0;
-    font-size: 14px;
-  }
-  .table-line td:nth-child(2) {
-    font-size: 20px;
-  }
-  .separator {
-    display: flex;
-    justify-content: space-between;
-    margin: 19px 0;
-  }
-  .table-line .separator td {
-    font-size: 14px;
-  }
-  h3 {
+
+  .table-title h3 {
     font-size: 20px;
     font-weight: 400;
     color: #363f5f;
   }
+
   .table-title span {
     font-size: 14px;
+  }
+
+  .table-content .table-rows .table-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 18px 24px;
+    min-height: 128px;
+  }
+
+  .table-content .table-rows .table-row .separator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .table-row span:nth-child(1),
+  .table-header span:nth-child(1) {
+    padding: 0;
+  }
+
+  .table-row > span:nth-child(2) {
+    font-size: 25px;
   }
 }

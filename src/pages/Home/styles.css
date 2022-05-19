@@ -3,6 +3,7 @@
   align-items: center;
   gap: 3.2rem;
   width: 100%;
+  min-height: 200px;
 }
 
 @media (max-width: 768px) {

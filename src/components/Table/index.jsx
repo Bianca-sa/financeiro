@@ -1,41 +1,55 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import './table.css';
 import Context from '../../context';
+import { formatNumber } from '../../utils';
 
 const Line = () => {
-  const { dataArray } = useContext(Context);
   const widths = window.screen.width;
+  const { dataArray } = useContext(Context);
 
   return (
-    <table className='table'>
-      <tr className='table-header'>
+    <div className='table-content'>
+      <div className='table-header'>
         {widths <= 768 ? (
           <div className='table-title'>
             <h3>Listagem</h3>
-            <span>4 itens</span>
+            <span>
+              {dataArray.length} {dataArray.length > 1 ? 'itens' : 'item'}
+            </span>
           </div>
         ) : (
-          <>
-            <th>Título</th>
-            <th>Preço</th>
-            <th>Categoria</th>
-            <th>Data</th>
-          </>
+          <div className='table-header-row'>
+            <span>Título</span>
+            <span>Preço</span>
+            <span>Categoria</span>
+            <span>Data</span>
+          </div>
         )}
-      </tr>
-      {dataArray.map((obj) => {
-        return (
-          <tr className='table-line'>
-            <td>{obj.name}</td>
-            <td>R${obj.price}</td>
-            <div className='separator'>
-              <td>{obj.category}</td>
-              <td>Hoje</td>
+      </div>
+      <div className='table-rows'>
+        {dataArray.map((obj) => {
+          return (
+            <div className='table-row'>
+              <span>{obj.name}</span>
+              <span
+                style={
+                  obj.outputSelected
+                    ? { color: '#E62E4D' }
+                    : { color: '#12A454' }
+                }
+              >
+                {obj.outputSelected && '-'}
+                {formatNumber(obj.price)}
+              </span>
+              <div className='separator'>
+                <span>{obj.category}</span>
+                <span>{obj.currentDate}</span>
+              </div>
             </div>
-          </tr>
-        );
-      })}
-    </table>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 

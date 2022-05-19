@@ -3,6 +3,7 @@ import './card.css';
 import entrada from '../../images/entradas.svg';
 import saida from '../../images/saidas.svg';
 import dolar from '../../images/total.svg';
+import { formatNumber } from '../../utils';
 
 const Card = ({ label, value, isTotal, output }) => {
   const handleImg = () => {
@@ -23,7 +24,7 @@ const Card = ({ label, value, isTotal, output }) => {
     >
       <p>{label}</p>
       <img src={handleImg()} alt='' />
-      <span>R${value}</span>
+      <span>{formatNumber(value)}</span>
     </div>
   );
 };

@@ -5,13 +5,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 10%;
+  gap: 68px;
+  padding: 32px 10%;
 }
 
 .content {
   width: 100%;
-  height: 75vh;
+  min-height: 75vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +22,13 @@
 @media (max-width: 768px) {
   .background {
     background: linear-gradient(#5429cc 28%, #f0f2f5 0%);
-    padding: 43px 15px 0;
-  }
-  .content {
+    padding: 42px 16px 16px;
     height: 100%;
-    margin-top: 41px;
+    min-height: 100vh;
+    gap: 36px;
+  }
+
+  .content {
     gap: 32px;
   }
 }

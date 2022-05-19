@@ -59,7 +59,7 @@ const Modal = ({ openModal }) => {
             required
           />
           <input
-            type='money'
+            type='number'
             placeholder='Preço'
             onChange={(event) => setPrice(event.target.value.replace(',', '.'))}
             value={price}

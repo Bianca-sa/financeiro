@@ -30,7 +30,7 @@ const Line = () => {
         {dataArray.map((obj) => {
           return (
             <div className='table-row'>
-              <span>{obj.name}</span>
+              <span>{obj.name.toUpperCase()}</span>
               <span
                 style={
                   obj.outputSelected

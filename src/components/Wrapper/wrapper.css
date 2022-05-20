@@ -1,11 +1,11 @@
 .background {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(#5429cc 27%, #f0f2f5 0%);
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(#5429cc 180px, #f0f2f5 0%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 68px;
   padding: 32px 10%;
 }
 
@@ -16,12 +16,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px;
+}
+
+@media (max-width: 1400px) {
+  .content {
+    margin-top: 0px !important;
+  }
 }
 
 @media (max-width: 768px) {
   .background {
-    background: linear-gradient(#5429cc 28%, #f0f2f5 0%);
+    background: linear-gradient(#5429cc 230px, #f0f2f5 0%);
     padding: 42px 16px 16px;
     height: 100%;
     min-height: 100vh;

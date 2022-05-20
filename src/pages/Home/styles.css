@@ -8,7 +8,7 @@
 
 @media (max-width: 768px) {
   .cards {
-    overflow-x: scroll;
+    overflow-x: auto;
     gap: 16px;
   }
 }

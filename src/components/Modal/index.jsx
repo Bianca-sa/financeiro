@@ -3,7 +3,7 @@ import ButtonRegister from '../ButtonRegister';
 import CheckButton from '../CheckButoon';
 import vector from '../../images/vector.svg';
 import Context from '../../context';
-import { getCurrentDate, formatNumber } from '../../utils';
+import { getCurrentDate, getDate } from '../../utils';
 import './modal.css';
 
 const Modal = ({ openModal }) => {
@@ -25,16 +25,23 @@ const Modal = ({ openModal }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const currentDate = getCurrentDate();
+    const { dataAtual: currentDate, dia, mes } = getCurrentDate();
+    const lastChange = getDate();
+    const newDay = Number(dia);
+    const newMonth = Number(mes);
+    const newPrice = Number(price);
+
     const newArray = [
       ...dataArray,
       {
         name,
-        price,
+        price: newPrice,
         category,
         inputSelected,
         outputSelected,
         currentDate,
+        day: newDay,
+        month: newMonth,
       },
     ];
     setDataArray(newArray);
@@ -60,9 +67,9 @@ const Modal = ({ openModal }) => {
           />
           <input
             type='number'
+            step='any'
             placeholder='Preço'
             onChange={(event) => setPrice(event.target.value.replace(',', '.'))}
-            value={price}
             required
           />
           <div className='bt-conteiner'>

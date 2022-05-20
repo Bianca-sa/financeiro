@@ -10,6 +10,11 @@
   position: relative;
 }
 
+.card h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .card img {
   width: 32px;
   position: absolute;
@@ -24,12 +29,20 @@
 @media (max-width: 768px) {
   .card {
     min-width: 290px;
-    height: 100%;
+    width: 100%;
+    min-height: 200px;
+    justify-content: unset;
   }
-  .card p {
+  .card h2 {
     font-size: 14px;
   }
-  .card span {
-    margin: 0 15px 50px;
+
+  .card p {
+    font-size: 12px;
+    color: #969cb3;
+  }
+
+  .card div {
+    margin-top: 48px;
   }
 }
